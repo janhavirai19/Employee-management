@@ -1,5 +1,3 @@
-// Employees.jsx
-
 import React, { useEffect, useState } from "react";
 import {
   FiPlus,
@@ -82,22 +80,18 @@ const Employees = () => {
     image: "",
   });
 
-  // Load Local Storage (only if empty)
   useEffect(() => {
     const savedEmployees = localStorage.getItem("employees");
 
     if (savedEmployees) {
       setEmployees(JSON.parse(savedEmployees));
     }
-    // If localStorage is empty, the initial 6 employees will show
   }, []);
 
-  // Save Local Storage
   useEffect(() => {
     localStorage.setItem("employees", JSON.stringify(employees));
   }, [employees]);
 
-  // Handle Input
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -105,7 +99,7 @@ const Employees = () => {
     });
   };
 
-  // Add Employee
+  
   const addEmployee = (e) => {
     e.preventDefault();
 
@@ -138,13 +132,12 @@ const Employees = () => {
     setShowForm(false);
   };
 
-  // Delete Employee
+  
   const deleteEmployee = (id) => {
     const updatedEmployees = employees.filter((emp) => emp.id !== id);
     setEmployees(updatedEmployees);
   };
 
-  // Search Employee
   const filteredEmployees = employees.filter(
     (emp) =>
       emp.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -154,7 +147,7 @@ const Employees = () => {
 
   return (
     <div className="employee-page">
-      {/* HEADER */}
+   
       <div className="employee-header">
         <div>
           <h1>Employees</h1>
@@ -170,7 +163,6 @@ const Employees = () => {
         </button>
       </div>
 
-      {/* SEARCH */}
       <div className="search-box">
         <FiSearch />
         <input
@@ -181,7 +173,6 @@ const Employees = () => {
         />
       </div>
 
-      {/* FORM */}
       {showForm && (
         <div className="form-container">
           <h2>Add Employee Details</h2>
@@ -239,8 +230,6 @@ const Employees = () => {
           </form>
         </div>
       )}
-
-      {/* EMPLOYEE CARDS */}
       <div className="employee-grid">
         {filteredEmployees.length > 0 ? (
           filteredEmployees.map((emp) => (

@@ -26,8 +26,6 @@ function Dashboard() {
   return (
     <div className="dashboard-shell">
 
-      {/* SIDEBAR */}
-
       <aside className="sidebar">
 
         <div className="brand">
@@ -38,9 +36,6 @@ function Dashboard() {
             <p>MANAGEMENT</p>
           </div>
         </div>
-
-        {/* CLICKABLE SIDEBAR */}
-
         <nav className="sidebar-nav">
 
           <button
@@ -95,12 +90,7 @@ function Dashboard() {
 
       </aside>
 
-      {/* MAIN */}
-
       <main className="main">
-
-        {/* TOPBAR */}
-
         <header className="topbar">
 
           <div className="search-bar">
@@ -138,9 +128,6 @@ function Dashboard() {
           </div>
 
         </header>
-
-        {/* WELCOME */}
-
         <section className="welcome-row">
 
           <div>
@@ -152,9 +139,6 @@ function Dashboard() {
           </div>
 
         </section>
-
-        {/* STATS */}
-
         <section className="stats-grid">
 
           <div className="stat-card purple">
@@ -224,12 +208,8 @@ function Dashboard() {
           </div>
 
         </section>
-
-        {/* CARDS */}
-
         <section className="cards-grid">
 
-          {/* ATTENDANCE */}
 
           <div className="panel">
 
@@ -279,9 +259,6 @@ function Dashboard() {
             </div>
 
           </div>
-
-          {/* ACTIVITIES */}
-
           <div className="panel">
 
             <div className="panel-header">
@@ -373,8 +350,6 @@ function Dashboard() {
             </div>
 
           </div>
-
-          {/* EMPLOYEE STATS */}
 
           <div className="panel">
 

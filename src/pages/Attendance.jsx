@@ -1,5 +1,3 @@
-// Attendance.jsx
-
 import React, { useEffect, useState } from "react";
 import {
   FiSearch,
@@ -13,9 +11,6 @@ import "../styles/Attendance.css";
 const Attendance = () => {
   const [employees, setEmployees] = useState([]);
   const [search, setSearch] = useState("");
-
-  // Load Saved Attendance
-
   useEffect(() => {
     const savedData = localStorage.getItem("attendance");
 
@@ -58,13 +53,9 @@ const Attendance = () => {
     }
   }, []);
 
-  // Save Local Storage
-
   useEffect(() => {
     localStorage.setItem("attendance", JSON.stringify(employees));
   }, [employees]);
-
-  // Change Status
 
   const updateStatus = (id, newStatus) => {
     const updatedEmployees = employees.map((emp) =>
@@ -78,9 +69,6 @@ const Attendance = () => {
 
     setEmployees(updatedEmployees);
   };
-
-  // Search
-
   const filteredEmployees = employees.filter(
     (emp) =>
       emp.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -89,7 +77,6 @@ const Attendance = () => {
 
   return (
     <div className="attendance-page">
-      {/* HEADER */}
 
       <div className="attendance-header">
         <div>
@@ -102,7 +89,6 @@ const Attendance = () => {
         </div>
       </div>
 
-      {/* SEARCH */}
 
       <div className="search-box">
         <FiSearch />
@@ -115,7 +101,7 @@ const Attendance = () => {
         />
       </div>
 
-      {/* TABLE */}
+    
 
       <div className="attendance-table">
         <div className="table-head">
@@ -126,11 +112,9 @@ const Attendance = () => {
           <span>Action</span>
         </div>
 
-        {/* ROWS */}
-
         {filteredEmployees.map((emp) => (
           <div className="table-row" key={emp.id}>
-            {/* Employee */}
+            
 
             <div className="employee-info">
               <img src={emp.image} alt="" />
@@ -141,20 +125,16 @@ const Attendance = () => {
               </div>
             </div>
 
-            {/* Department */}
 
             <div className="department">
               {emp.department}
             </div>
-
-            {/* Time */}
 
             <div className="time">
               <FiClock />
               {emp.time}
             </div>
 
-            {/* Status */}
 
             <div
               className={`status ${emp.status.toLowerCase()}`}
@@ -162,7 +142,7 @@ const Attendance = () => {
               {emp.status}
             </div>
 
-            {/* Actions */}
+          
 
             <div className="action-buttons">
               <button

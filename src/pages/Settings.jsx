@@ -1,5 +1,3 @@
-// Settings.jsx
-
 import React, { useState, useEffect } from "react";
 import {
   FiUser,
@@ -36,8 +34,6 @@ const Settings = () => {
     newPassword: "",
     confirmPassword: "",
   });
-
-  // Load from localStorage
   useEffect(() => {
     const savedSettings = localStorage.getItem("userSettings");
     if (savedSettings) {
@@ -53,7 +49,6 @@ const Settings = () => {
     }
   }, []);
 
-  // Save settings to localStorage
   useEffect(() => {
     localStorage.setItem(
       "userSettings",
@@ -65,12 +60,11 @@ const Settings = () => {
     );
   }, [darkMode, notifications, emailNotifications]);
 
-  // Save user data to localStorage
   useEffect(() => {
     localStorage.setItem("userData", JSON.stringify(formData));
   }, [formData]);
 
-  // Handle input change
+  
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -78,14 +72,14 @@ const Settings = () => {
     });
   };
 
-  // Save settings
+
   const handleSave = (e) => {
     e.preventDefault();
     setSaveSuccess(true);
     setTimeout(() => setSaveSuccess(false), 3000);
   };
 
-  // Change password
+ 
   const handleChangePassword = (e) => {
     e.preventDefault();
     if (formData.newPassword !== formData.confirmPassword) {
@@ -106,7 +100,7 @@ const Settings = () => {
     });
   };
 
-  // Tabs configuration
+ 
   const tabs = [
     { id: "profile", label: "Profile", icon: FiUser },
     { id: "security", label: "Security", icon: FiShield },
@@ -116,7 +110,7 @@ const Settings = () => {
 
   return (
     <div className={`settings-page ${darkMode ? "dark-mode" : "light-mode"}`}>
-      {/* SIDEBAR */}
+   
       <aside className="settings-sidebar">
         <div className="sidebar-header">
           <h2>Settings</h2>
@@ -141,7 +135,6 @@ const Settings = () => {
         </div>
       </aside>
 
-      {/* MAIN CONTENT */}
       <main className="settings-main">
         {/* HEADER */}
         <header className="settings-header">
@@ -151,7 +144,7 @@ const Settings = () => {
           </div>
         </header>
 
-        {/* SUCCESS MESSAGE */}
+        
         {saveSuccess && (
           <div className="success-message">
             <FiSave />
@@ -159,7 +152,7 @@ const Settings = () => {
           </div>
         )}
 
-        {/* PROFILE TAB */}
+       
         {activeTab === "profile" && (
           <div className="settings-content">
             <div className="profile-section">
@@ -259,7 +252,7 @@ const Settings = () => {
           </div>
         )}
 
-        {/* SECURITY TAB */}
+       
         {activeTab === "security" && (
           <div className="settings-content">
             <div className="security-section">
@@ -349,7 +342,7 @@ const Settings = () => {
           </div>
         )}
 
-        {/* NOTIFICATIONS TAB */}
+       
         {activeTab === "notifications" && (
           <div className="settings-content">
             <div className="notifications-section">
@@ -424,7 +417,6 @@ const Settings = () => {
           </div>
         )}
 
-        {/* APPEARANCE TAB */}
         {activeTab === "appearance" && (
           <div className="settings-content">
             <div className="appearance-section">

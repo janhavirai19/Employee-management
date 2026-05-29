@@ -97,8 +97,6 @@ const Reports = () => {
   return (
     <div className="reports-page">
 
-      {/* ===== HEADER ===== */}
-
       <div className="reports-header">
 
         <div>
@@ -115,8 +113,6 @@ const Reports = () => {
         </button>
 
       </div>
-
-      {/* ===== TOP CARDS ===== */}
 
       <div className="report-cards">
 
@@ -139,8 +135,6 @@ const Reports = () => {
         ))}
 
       </div>
-
-      {/* ===== ANALYTICS SECTION ===== */}
 
       <div className="analytics-grid">
 
@@ -198,9 +192,6 @@ const Reports = () => {
         </div>
 
       </div>
-
-      {/* ===== EMPLOYEE REPORT TABLE ===== */}
-
       <div className="report-table-container">
 
         <div className="table-header">
@@ -208,8 +199,6 @@ const Reports = () => {
         </div>
 
         <div className="report-table">
-
-          {/* TABLE HEAD */}
 
           <div className="table-head">
             <span>Employee</span>
@@ -219,7 +208,6 @@ const Reports = () => {
             <span>Status</span>
           </div>
 
-          {/* TABLE ROWS */}
 
           {employees.map((employee) => (
             <div className="table-row" key={employee.id}>
