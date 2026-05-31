@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./../styles/Departments.css";
 
 function Departments() {
+
+  const navigate = useNavigate();
 
   const [departments, setDepartments] = useState([
     {
@@ -94,7 +97,6 @@ function Departments() {
     setShowForm(false);
   };
 
-
   const deleteDepartment = (id) => {
 
     const updatedDepartments =
@@ -109,12 +111,25 @@ function Departments() {
 
       <div className="department-header">
 
-        <div>
-          <h1>Departments</h1>
+        <div className="header-left">
 
-          <p>
-            Manage all company departments professionally
-          </p>
+          <button
+            className="back-btn"
+            onClick={() => navigate("/dashboard")}
+          >
+            ← Back
+          </button>
+
+          <div>
+
+            <h1>Departments</h1>
+
+            <p>
+              Manage all company departments professionally
+            </p>
+
+          </div>
+
         </div>
 
         <button
@@ -289,6 +304,7 @@ function Departments() {
       </div>
 
     </div>
+
   );
 }
 

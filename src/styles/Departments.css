@@ -12,8 +12,6 @@ body{
   overflow-y: auto;
 }
 
-/* PAGE */
-
 .departments-page{
   width: 100%;
   min-height: 100vh;
@@ -30,8 +28,6 @@ body{
   background-position: center;
   background-attachment: fixed;
 }
-
-/* HEADER */
 
 .department-header{
   display: flex;
@@ -52,8 +48,6 @@ body{
   color: #cbd5e1;
   font-size: 14px;
 }
-
-/* ADD BUTTON */
 
 .add-btn{
   border: none;
@@ -80,8 +74,6 @@ body{
   box-shadow: 0 8px 20px rgba(37,99,235,0.35);
 }
 
-/* GRID */
-
 .department-grid{
   display: grid;
 
@@ -89,9 +81,6 @@ body{
 
   gap: 25px;
 }
-
-/* CARD */
-
 .department-card{
   background: rgba(255,255,255,0.08);
 
@@ -134,8 +123,6 @@ body{
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
-/* CARD TOP */
-
 .card-top{
   display: flex;
   justify-content: space-between;
@@ -143,8 +130,6 @@ body{
 
   margin-bottom: 22px;
 }
-
-/* ICON */
 
 .dept-icon{
   width: 65px;
@@ -175,8 +160,6 @@ body{
   background: rgba(249,115,22,0.18);
 }
 
-/* STATUS */
-
 .status{
   padding: 7px 14px;
 
@@ -196,8 +179,6 @@ body{
   color: #fde047;
 }
 
-/* TEXT */
-
 .department-card h2{
   font-size: 24px;
 
@@ -213,8 +194,6 @@ body{
 
   margin-bottom: 24px;
 }
-
-/* INFO */
 
 .department-info{
   display: flex;
@@ -236,8 +215,6 @@ body{
 
   font-size: 13px;
 }
-
-/* BUTTONS */
 
 .card-buttons{
   display: flex;
@@ -282,9 +259,6 @@ body{
 .delete-btn:hover{
   background: #ef4444;
 }
-
-/* POPUP */
-
 .popup-overlay{
   position: fixed;
 
@@ -331,8 +305,6 @@ body{
   }
 }
 
-/* POPUP TOP */
-
 .popup-top{
   display: flex;
   justify-content: space-between;
@@ -356,8 +328,6 @@ body{
 
   cursor: pointer;
 }
-
-/* FORM */
 
 .form-group{
   margin-bottom: 18px;
@@ -421,7 +391,7 @@ body{
   margin-top: 10px;
 }
 
-/* RESPONSIVE */
+
 
 @media(max-width: 768px){
 

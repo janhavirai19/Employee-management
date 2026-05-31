@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+
 import {
   FiHome,
   FiUsers,
@@ -9,6 +10,8 @@ import {
   FiSearch,
   FiBell,
   FiChevronDown,
+  FiMenu,
+  FiX,
 } from "react-icons/fi";
 
 import { useNavigate } from "react-router-dom";
@@ -23,19 +26,67 @@ function Dashboard() {
 
   const navigate = useNavigate();
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const userName =
+    localStorage.getItem("userName") || "Admin User";
+
   return (
+
     <div className="dashboard-shell">
 
-      <aside className="sidebar">
+  
+
+      <div className="mobile-topbar">
+
+        <button
+          className="menu-btn"
+          onClick={() => setMenuOpen(true)}
+        >
+          <FiMenu />
+        </button>
+
+        <h2>EMS Dashboard</h2>
+
+      </div>
+
+
+
+      <aside
+        className={
+          menuOpen ? "sidebar active" : "sidebar"
+        }
+      >
+
+        <div className="close-btn-wrap">
+
+          <button
+            className="close-btn"
+            onClick={() => setMenuOpen(false)}
+          >
+            <FiX />
+          </button>
+
+        </div>
 
         <div className="brand">
-          <div className="brand-icon">▣</div>
+
+          <div className="brand-icon">
+            ▣
+          </div>
 
           <div>
+
             <h2>EMPLOYEE</h2>
+
             <p>MANAGEMENT</p>
+
           </div>
+
         </div>
+
+      
+
         <nav className="sidebar-nav">
 
           <button
@@ -90,23 +141,35 @@ function Dashboard() {
 
       </aside>
 
+
+
       <main className="main">
+
+    
+
         <header className="topbar">
 
           <div className="search-bar">
+
             <FiSearch />
 
             <input
               type="text"
-              placeholder="Search employees, departments..."
+              placeholder="Search employees..."
             />
+
           </div>
 
           <div className="topbar-right">
 
             <button className="icon-btn">
+
               <FiBell />
-              <span className="badge">5</span>
+
+              <span className="badge">
+                5
+              </span>
+
             </button>
 
             <div className="profile">
@@ -117,8 +180,11 @@ function Dashboard() {
               />
 
               <div>
-                <h4>Admin User</h4>
+
+                <h4>{userName}</h4>
+
                 <p>Administrator</p>
+
               </div>
 
               <FiChevronDown />
@@ -128,17 +194,26 @@ function Dashboard() {
           </div>
 
         </header>
+
+
         <section className="welcome-row">
 
           <div>
-            <h1>Welcome back, Admin! 👋</h1>
+
+            <h1>
+              Welcome back 👋
+            </h1>
 
             <p>
               Here's what's happening with your organization today.
             </p>
+
           </div>
 
         </section>
+
+  
+
         <section className="stats-grid">
 
           <div className="stat-card purple">
@@ -148,12 +223,15 @@ function Dashboard() {
             </div>
 
             <div>
+
               <p>Total Employees</p>
+
               <h2>1,248</h2>
 
               <span className="up">
                 ↑ 12.5% from last month
               </span>
+
             </div>
 
           </div>
@@ -165,12 +243,15 @@ function Dashboard() {
             </div>
 
             <div>
+
               <p>Present Today</p>
+
               <h2>1,102</h2>
 
               <span className="up">
                 ↑ 8.3% from yesterday
               </span>
+
             </div>
 
           </div>
@@ -182,10 +263,15 @@ function Dashboard() {
             </div>
 
             <div>
+
               <p>Departments</p>
+
               <h2>12</h2>
 
-              <span>No change</span>
+              <span>
+                No change
+              </span>
+
             </div>
 
           </div>
@@ -197,25 +283,33 @@ function Dashboard() {
             </div>
 
             <div>
+
               <p>Pending Requests</p>
+
               <h2>24</h2>
 
               <span className="down">
                 ↓ 4 from yesterday
               </span>
+
             </div>
 
           </div>
 
         </section>
+
+
+
         <section className="cards-grid">
 
-
+    
           <div className="panel">
 
             <div className="panel-header">
 
-              <h3>Attendance Overview</h3>
+              <h3>
+                Attendance Overview
+              </h3>
 
               <button className="ghost-btn">
                 This Week
@@ -228,8 +322,11 @@ function Dashboard() {
               <div className="donut">
 
                 <div className="donut-center">
+
                   <strong>88%</strong>
+
                   <span>Present</span>
+
                 </div>
 
               </div>
@@ -237,21 +334,33 @@ function Dashboard() {
               <div className="legend">
 
                 <div>
+
                   <span className="dot green-dot"></span>
+
                   Present
-                  <b>1,102 (88%)</b>
+
+                  <b>1,102</b>
+
                 </div>
 
                 <div>
+
                   <span className="dot yellow-dot"></span>
-                  On Leave
-                  <b>62 (5%)</b>
+
+                  Leave
+
+                  <b>62</b>
+
                 </div>
 
                 <div>
+
                   <span className="dot red-dot"></span>
+
                   Absent
-                  <b>84 (7%)</b>
+
+                  <b>84</b>
+
                 </div>
 
               </div>
@@ -259,11 +368,14 @@ function Dashboard() {
             </div>
 
           </div>
+
           <div className="panel">
 
             <div className="panel-header">
 
-              <h3>Recent Activities</h3>
+              <h3>
+                Recent Activities
+              </h3>
 
               <button className="link-btn">
                 View All
@@ -280,11 +392,15 @@ function Dashboard() {
                 </div>
 
                 <div>
+
                   <strong>
-                    New employee Janhavi Rai joined
+                    New employee joined
                   </strong>
 
-                  <p>Development Team</p>
+                  <p>
+                    Development Team
+                  </p>
+
                 </div>
 
                 <span>10:30 AM</span>
@@ -298,11 +414,15 @@ function Dashboard() {
                 </div>
 
                 <div>
+
                   <strong>
-                    Attendance updated successfully
+                    Attendance updated
                   </strong>
 
-                  <p>For May 20, 2026</p>
+                  <p>
+                    May 2026
+                  </p>
+
                 </div>
 
                 <span>09:15 AM</span>
@@ -316,34 +436,18 @@ function Dashboard() {
                 </div>
 
                 <div>
+
                   <strong>
                     Monthly report generated
                   </strong>
 
-                  <p>May 2026 Report</p>
+                  <p>
+                    Report completed
+                  </p>
+
                 </div>
 
                 <span>08:45 AM</span>
-
-              </div>
-
-              <div className="activity-item">
-
-                <div className="activity-icon orange">
-                  ✏️
-                </div>
-
-                <div>
-                  <strong>
-                    Employee profile edited
-                  </strong>
-
-                  <p>
-                    Rahul Verma updated profile
-                  </p>
-                </div>
-
-                <span>Yesterday</span>
 
               </div>
 
@@ -351,11 +455,15 @@ function Dashboard() {
 
           </div>
 
+       
+
           <div className="panel">
 
             <div className="panel-header">
 
-              <h3>Employee Statistics</h3>
+              <h3>
+                Employee Statistics
+              </h3>
 
               <button className="ghost-btn">
                 This Month
@@ -372,14 +480,17 @@ function Dashboard() {
                 </div>
 
                 <div>
-                  <p>New employees</p>
+
+                  <p>New Employees</p>
+
                   <h4>1,180</h4>
+
                 </div>
 
               </div>
 
               <span className="up">
-                ↑ 10.2% from last month
+                ↑ 10.2%
               </span>
 
             </div>
@@ -393,14 +504,17 @@ function Dashboard() {
                 </div>
 
                 <div>
+
                   <p>On Leave</p>
+
                   <h4>42</h4>
+
                 </div>
 
               </div>
 
               <span className="down">
-                ↓ 2.1% from last month
+                ↓ 2.1%
               </span>
 
             </div>

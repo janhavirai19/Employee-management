@@ -14,7 +14,6 @@ body,
   height: 100%;
 }
 
-/* MAIN BACKGROUND */
 .login-container {
   width: 100%;
   min-height: 100vh;
@@ -31,7 +30,6 @@ body,
   background-attachment: fixed;
 }
 
-/* GLASS CARD */
 .login-card {
   width: 100%;
   max-width: 760px;
@@ -45,7 +43,6 @@ body,
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
 }
 
-/* LEFT SIDE */
 .login-left {
   flex: 1;
   position: relative;
@@ -59,7 +56,6 @@ body,
   overflow: hidden;
 }
 
-/* LOGO */
 .logo h2 {
   position: absolute;
   top: 20px;
@@ -68,7 +64,6 @@ body,
   font-weight: 700;
 }
 
-/* CONTENT */
 .left-content {
   display: flex;
   flex-direction: column;
@@ -107,7 +102,6 @@ body,
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* STATS */
 .stats {
   display: flex;
   gap: 12px;
@@ -135,7 +129,6 @@ body,
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* RIGHT SIDE */
 .login-right {
   flex: 1;
   display: flex;
@@ -144,7 +137,6 @@ body,
   padding: 25px;
 }
 
-/* FORM */
 .form-container {
   width: 100%;
   max-width: 310px;
@@ -163,7 +155,7 @@ body,
   margin-bottom: 28px;
 }
 
-/* INPUTS */
+
 .input-group {
   margin-bottom: 18px;
 }
@@ -195,7 +187,6 @@ body,
   border-color: white;
 }
 
-/* BUTTON */
 button {
   width: 100%;
   height: 48px;
@@ -212,8 +203,6 @@ button {
 button:hover {
   transform: scale(1.03);
 }
-
-/* CIRCLES */
 .circle,
 .circle2 {
   position: absolute;
@@ -234,10 +223,6 @@ button:hover {
   bottom: -40px;
   left: -40px;
 }
-
-/* RESPONSIVE MEDIA QUERIES */
-
-/* Tablet & Mobile (768px aur niche) */
 @media (max-width: 768px) {
   .login-card {
     flex-direction: column;
@@ -309,7 +294,6 @@ button:hover {
   }
 }
 
-/* Small Mobile (480px aur niche) */
 @media (max-width: 480px) {
   .login-container {
     padding: 12px;
@@ -379,7 +363,6 @@ button:hover {
   }
 }
 
-/* Landscape Mobile */
 @media (max-width: 768px) and (orientation: landscape) {
   .login-card {
     max-width: 90vw;
@@ -397,4 +380,29 @@ button:hover {
   .left-content p { 
     font-size: 11px;
   }
+}
+
+
+.sidebar{
+  width:240px;
+  min-height:100vh;
+  background:#0f172a;
+  padding:20px 14px;
+  border-right:1px solid rgba(255,255,255,.05);
+  transition:.4s;
+
+  display:flex;
+  flex-direction:column;
+}
+
+.sidebar-nav{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  flex:1;
+}
+
+.sidebar::after{
+  content:"";
+  flex:1;
 }

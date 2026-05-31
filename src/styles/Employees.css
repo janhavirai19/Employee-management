@@ -1,4 +1,3 @@
-/* Employees.css - Fully Responsive */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
@@ -29,8 +28,6 @@ body {
   background-position: center;
 }
 
-/* ===== HEADER ===== */
-
 .employee-header {
   width: 100%;
   display: flex;
@@ -56,7 +53,6 @@ body {
   font-size: clamp(13px, 2.5vw, 15px);
 }
 
-/* ===== ADD BUTTON ===== */
 
 .add-btn {
   height: clamp(44px, 8vw, 52px);
@@ -85,9 +81,6 @@ body {
 .add-btn svg {
   font-size: clamp(16px, 3vw, 18px);
 }
-
-/* ===== SEARCH BOX ===== */
-
 .search-box {
   width: 100%;
   height: clamp(50px, 10vw, 65px);
@@ -121,8 +114,6 @@ body {
 .search-box input::placeholder {
   color: #64748b;
 }
-
-/* ===== FORM CONTAINER ===== */
 
 .form-container {
   width: 100%;
@@ -189,16 +180,12 @@ body {
   box-shadow: 0 12px 35px rgba(124, 58, 237, 0.5);
 }
 
-/* ===== EMPLOYEE GRID ===== */
-
 .employee-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(clamp(260px, 45vw, 320px), 1fr));
   gap: clamp(18px, 4vw, 28px);
   width: 100%;
 }
-
-/* ===== EMPLOYEE CARD ===== */
 
 .employee-card {
   background: rgba(8, 15, 35, 0.88);
@@ -228,8 +215,6 @@ body {
   border-color: rgba(124, 58, 237, 0.5);
   box-shadow: 0 15px 35px rgba(0,0,0,0.35);
 }
-
-/* ===== CARD TOP ===== */
 
 .card-top {
   display: flex;
@@ -274,8 +259,6 @@ body {
   transform: scale(1.1);
 }
 
-/* ===== CARD DETAILS ===== */
-
 .employee-card h3 {
   font-size: clamp(20px, 4.5vw, 28px);
   color: white;
@@ -302,8 +285,6 @@ body {
   font-size: clamp(14px, 3vw, 16px);
 }
 
-/* ===== TAGS & SALARY ===== */
-
 .tags {
   display: flex;
   justify-content: space-between;
@@ -328,9 +309,6 @@ body {
   color: #4ade80 !important;
   font-weight: 600;
 }
-
-/* ===== EMPTY STATE ===== */
-
 .empty-box {
   width: 100%;
   text-align: center;
@@ -351,9 +329,6 @@ body {
   font-size: clamp(13px, 3vw, 15px);
 }
 
-/* ===== MEDIA QUERIES for Specific Devices ===== */
-
-/* Large Desktop (1920px+) */
 @media (min-width: 1920px) {
   .employee-page {
     padding: 40px;
@@ -363,22 +338,17 @@ body {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-
-/* Desktop (1200px - 1919px) */
 @media (min-width: 1200px) and (max-width: 1919px) {
   .employee-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
-/* Laptop (992px - 1199px) */
 @media (min-width: 992px) and (max-width: 1199px) {
   .employee-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Tablet (768px - 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
   .employee-page {
     padding: 20px;
@@ -392,8 +362,6 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-/* Small Tablet / Large Mobile (576px - 767px) */
 @media (min-width: 576px) and (max-width: 767px) {
   .employee-page {
     padding: 18px;
@@ -416,8 +384,6 @@ body {
     grid-template-columns: 1fr;
   }
 }
-
-/* Mobile (480px - 575px) */
 @media (min-width: 480px) and (max-width: 575px) {
   .employee-page {
     padding: 16px;
@@ -462,8 +428,6 @@ body {
     text-align: center;
   }
 }
-
-/* Small Mobile (375px - 479px) */
 @media (min-width: 375px) and (max-width: 479px) {
   .employee-page {
     padding: 12px;
@@ -496,8 +460,6 @@ body {
     font-size: 20px;
   }
 }
-
-/* Extra Small Mobile (below 375px) */
 @media (max-width: 374px) {
   .employee-page {
     padding: 10px;
@@ -545,21 +507,18 @@ body {
   }
 }
 
-/* iPad Landscape */
+
 @media (max-width: 1024px) and (min-width: 768px) {
   .employee-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-/* iPad Portrait */
 @media (max-width: 768px) {
   .employee-grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* Galaxy Fold / Small Foldable */
 @media (max-width: 280px) {
   .employee-page {
     padding: 8px;
@@ -572,5 +531,527 @@ body {
   .add-btn {
     font-size: 13px;
     padding: 0 12px;
+  }
+}
+
+.employee-header{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:24px;
+  padding-bottom:16px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.back-btn{
+  border:none;
+  background:linear-gradient(135deg,#7c3aed,#4338ca);
+  color:#fff;
+  height:38px;
+  min-width:88px;
+  padding:0 14px;
+  border-radius:10px;
+  font-size:12px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+  box-shadow:0 8px 18px rgba(124,58,237,.25);
+  white-space:nowrap;
+}
+
+.back-btn:hover{
+  transform:translateY(-2px);
+  opacity:.9;
+}
+.add-btn{
+  height:38px;
+  min-width:120px;
+  padding:0 14px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(135deg,#7c3aed,#4f46e5);
+  color:white;
+  font-size:12px;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  cursor:pointer;
+  transition:.3s;
+  box-shadow:0 8px 20px rgba(124,58,237,.25);
+}
+
+.add-btn svg{
+  font-size:15px;
+}
+
+.add-btn:hover{
+  transform:translateY(-2px);
+}
+.card-top button{
+  width:32px;
+  height:32px;
+  min-width:32px;
+  min-height:32px;
+  border-radius:10px;
+  border:none;
+  background:rgba(220,38,38,.15);
+  color:#ef4444;
+  font-size:14px;
+  cursor:pointer;
+  transition:.3s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.card-top button:hover{
+  background:crimson;
+  color:#fff;
+}
+
+
+@media(max-width:768px){
+
+  .employee-header{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .header-left{
+    width:100%;
+    justify-content:flex-start;
+  }
+
+  .add-btn{
+    min-width:110px;
+    height:36px;
+    font-size:11px;
+  }
+
+  .back-btn{
+    min-width:80px;
+    height:36px;
+    font-size:11px;
+  }
+}
+
+@media(max-width:480px){
+
+  .employee-header h1{
+    font-size:24px;
+  }
+
+  .employee-header p{
+    font-size:12px;
+  }
+
+  .header-left{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+  }
+
+  .add-btn{
+    width:120px;
+    height:34px;
+    font-size:11px;
+    border-radius:9px;
+  }
+
+  .back-btn{
+    width:85px;
+    height:34px;
+    font-size:11px;
+    border-radius:9px;
+  }
+
+  .card-top button{
+    width:30px;
+    height:30px;
+    min-width:30px;
+    min-height:30px;
+    font-size:13px;
+  }
+}
+
+.back-btn{
+  border:none;
+  background:linear-gradient(135deg,#7c3aed,#4338ca);
+  color:#fff;
+  height:36px;
+  width:85px;
+  padding:0 10px;
+  border-radius:10px;
+  font-size:11px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+  box-shadow:0 8px 18px rgba(124,58,237,.25);
+}
+
+.back-btn:hover{
+  transform:translateY(-2px);
+}
+
+.add-btn{
+  height:36px !important;
+  width:110px !important;
+  min-width:110px !important;
+  padding:0 10px !important;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(135deg,#7c3aed,#4f46e5);
+  color:#fff;
+  font-size:11px !important;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  cursor:pointer;
+  transition:.3s;
+  box-shadow:0 8px 20px rgba(124,58,237,.25);
+}
+
+.add-btn svg{
+  font-size:14px;
+}
+
+.add-btn:hover{
+  transform:translateY(-2px);
+}
+
+.card-top button{
+  width:22px !important;
+  height:22px !important;
+  min-width:22px !important;
+  min-height:22px !important;
+  border:none;
+  border-radius:6px;
+  background:rgba(220,38,38,.15);
+  color:#ef4444;
+  font-size:10px !important;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.3s;
+  padding:0;
+}
+
+.card-top button svg{
+  font-size:10px !important;
+}
+
+.card-top button:hover{
+  background:crimson;
+  color:#fff;
+}
+
+@media(max-width:480px){
+
+  .add-btn{
+    width:100px !important;
+    min-width:100px !important;
+    height:34px !important;
+    font-size:10px !important;
+  }
+
+  .back-btn{
+    width:78px;
+    height:34px;
+    font-size:10px;
+  }
+
+  .card-top button{
+    width:20px !important;
+    height:20px !important;
+    min-width:20px !important;
+    min-height:20px !important;
+    font-size:9px !important;
+    border-radius:5px;
+  }
+
+  .card-top button svg{
+    font-size:9px !important;
+  }
+}
+
+.employee-header{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  margin-bottom:24px;
+  padding-bottom:16px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  flex-wrap:wrap;
+}
+
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.back-btn{
+  border:none;
+  background:linear-gradient(135deg,#7c3aed,#4338ca);
+  color:#fff;
+  width:85px;
+  min-width:85px;
+  height:36px;
+  border-radius:10px;
+  font-size:11px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 8px 18px rgba(124,58,237,.25);
+}
+
+.back-btn:hover{
+  transform:translateY(-2px);
+  opacity:.9;
+}
+
+.add-btn{
+  width:110px !important;
+  min-width:110px !important;
+  height:36px !important;
+  padding:0 10px !important;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(135deg,#7c3aed,#4f46e5);
+  color:#fff;
+  font-size:11px !important;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  cursor:pointer;
+  transition:.3s;
+  box-shadow:0 8px 20px rgba(124,58,237,.25);
+}
+
+.add-btn svg{
+  font-size:14px !important;
+}
+
+.add-btn:hover{
+  transform:translateY(-2px);
+}
+
+.card-top button{
+  width:22px !important;
+  height:22px !important;
+  min-width:22px !important;
+  min-height:22px !important;
+  border:none;
+  border-radius:5px;
+  background:rgba(220,38,38,.15);
+  color:#ef4444;
+  font-size:9px !important;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.3s;
+  padding:0 !important;
+  flex-shrink:0;
+}
+
+.card-top button svg{
+  font-size:9px !important;
+}
+
+.card-top button:hover{
+  background:crimson;
+  color:#fff;
+  transform:scale(1.05);
+}
+
+@media(max-width:768px){
+
+  .employee-page{
+    padding:18px;
+  }
+
+  .employee-header{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .header-left{
+    width:100%;
+    align-items:flex-start;
+  }
+
+  .employee-grid{
+    grid-template-columns:1fr;
+  }
+
+  .employee-form{
+    grid-template-columns:1fr;
+  }
+
+  .add-btn{
+    width:105px !important;
+    min-width:105px !important;
+    height:34px !important;
+    font-size:10px !important;
+  }
+
+  .back-btn{
+    width:80px;
+    min-width:80px;
+    height:34px;
+    font-size:10px;
+  }
+
+  .card-top button{
+    width:20px !important;
+    height:20px !important;
+    min-width:20px !important;
+    min-height:20px !important;
+  }
+
+  .card-top button svg{
+    font-size:8px !important;
+  }
+}
+
+@media(max-width:480px){
+
+  .employee-page{
+    padding:12px;
+  }
+
+  .employee-header h1{
+    font-size:24px;
+  }
+
+  .employee-header p{
+    font-size:12px;
+  }
+
+  .header-left{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+  }
+
+  .add-btn{
+    width:100px !important;
+    min-width:100px !important;
+    height:32px !important;
+    font-size:10px !important;
+    border-radius:8px;
+  }
+
+  .back-btn{
+    width:75px;
+    min-width:75px;
+    height:32px;
+    font-size:10px;
+    border-radius:8px;
+  }
+
+  .card-top button{
+    width:18px !important;
+    height:18px !important;
+    min-width:18px !important;
+    min-height:18px !important;
+    border-radius:4px;
+  }
+
+  .card-top button svg{
+    font-size:7px !important;
+  }
+
+  .employee-card{
+    padding:18px;
+  }
+
+  .card-top img{
+    width:65px;
+    height:65px;
+    min-width:65px;
+    min-height:65px;
+  }
+
+  .tags{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .tags span{
+    width:100%;
+    text-align:center;
+  }
+}
+
+@media(max-width:320px){
+
+  .employee-page{
+    padding:10px;
+  }
+
+  .employee-header h1{
+    font-size:20px;
+  }
+
+  .employee-header p{
+    font-size:11px;
+  }
+
+  .add-btn{
+    width:92px !important;
+    min-width:92px !important;
+    height:30px !important;
+    font-size:9px !important;
+  }
+
+  .back-btn{
+    width:70px;
+    min-width:70px;
+    height:30px;
+    font-size:9px;
+  }
+
+  .card-top button{
+    width:16px !important;
+    height:16px !important;
+    min-width:16px !important;
+    min-height:16px !important;
+  }
+
+  .card-top button svg{
+    font-size:6px !important;
+  }
+
+  .employee-card h3{
+    font-size:18px;
+  }
+
+  .employee-detail{
+    font-size:11px;
   }
 }

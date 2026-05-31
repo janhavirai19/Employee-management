@@ -6,18 +6,29 @@ import {
   FiClock,
 } from "react-icons/fi";
 
+import { useNavigate } from "react-router-dom";
+
 import "../styles/Attendance.css";
 
 const Attendance = () => {
+
+  const navigate = useNavigate();
+
   const [employees, setEmployees] = useState([]);
   const [search, setSearch] = useState("");
+
   useEffect(() => {
+
     const savedData = localStorage.getItem("attendance");
 
     if (savedData) {
+
       setEmployees(JSON.parse(savedData));
+
     } else {
+
       const demoEmployees = [
+
         {
           id: 1,
           name: "Janhavi Rai",
@@ -47,17 +58,25 @@ const Attendance = () => {
           image:
             "https://cdn-icons-png.flaticon.com/512/4140/4140051.png",
         },
+
       ];
 
       setEmployees(demoEmployees);
     }
+
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("attendance", JSON.stringify(employees));
+
+    localStorage.setItem(
+      "attendance",
+      JSON.stringify(employees)
+    );
+
   }, [employees]);
 
   const updateStatus = (id, newStatus) => {
+
     const updatedEmployees = employees.map((emp) =>
       emp.id === id
         ? {
@@ -69,6 +88,7 @@ const Attendance = () => {
 
     setEmployees(updatedEmployees);
   };
+
   const filteredEmployees = employees.filter(
     (emp) =>
       emp.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -76,21 +96,35 @@ const Attendance = () => {
   );
 
   return (
+
     <div className="attendance-page">
 
       <div className="attendance-header">
-        <div>
-          <h1>Attendance Management</h1>
-          <p>Track employee attendance professionally</p>
+
+        <div className="header-left">
+
+          <button
+            className="back-btn"
+            onClick={() => navigate("/dashboard")}
+          >
+            ← Back
+          </button>
+
+          <div>
+            <h1>Attendance Management</h1>
+            <p>Track employee attendance professionally</p>
+          </div>
+
         </div>
 
         <div className="attendance-count">
           Total Employees : {employees.length}
         </div>
+
       </div>
 
-
       <div className="search-box">
+
         <FiSearch />
 
         <input
@@ -99,32 +133,35 @@ const Attendance = () => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
+
       </div>
 
-    
-
       <div className="attendance-table">
+
         <div className="table-head">
+
           <span>Employee</span>
           <span>Department</span>
           <span>Check In</span>
           <span>Status</span>
           <span>Action</span>
+
         </div>
 
         {filteredEmployees.map((emp) => (
+
           <div className="table-row" key={emp.id}>
-            
 
             <div className="employee-info">
+
               <img src={emp.image} alt="" />
 
               <div>
                 <h3>{emp.name}</h3>
                 <p>Employee ID : #{emp.id}</p>
               </div>
-            </div>
 
+            </div>
 
             <div className="department">
               {emp.department}
@@ -135,16 +172,14 @@ const Attendance = () => {
               {emp.time}
             </div>
 
-
             <div
               className={`status ${emp.status.toLowerCase()}`}
             >
               {emp.status}
             </div>
 
-          
-
             <div className="action-buttons">
+
               <button
                 className="present-btn"
                 onClick={() =>
@@ -156,7 +191,9 @@ const Attendance = () => {
 
               <button
                 className="late-btn"
-                onClick={() => updateStatus(emp.id, "Late")}
+                onClick={() =>
+                  updateStatus(emp.id, "Late")
+                }
               >
                 <FiClock />
               </button>
@@ -169,10 +206,14 @@ const Attendance = () => {
               >
                 <FiXCircle />
               </button>
+
             </div>
+
           </div>
         ))}
+
       </div>
+
     </div>
   );
 };

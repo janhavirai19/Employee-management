@@ -10,9 +10,13 @@ import {
   FiAward,
 } from "react-icons/fi";
 
+import { useNavigate } from "react-router-dom";
+
 import "../styles/Reports.css";
 
 const Reports = () => {
+
+  const navigate = useNavigate();
 
   const reportData = [
     {
@@ -94,20 +98,80 @@ const Reports = () => {
     },
   ];
 
+  /* ===== DOWNLOAD REPORT ===== */
+
+  const handleDownloadReport = () => {
+
+    const headers = [
+      "Name",
+      "Role",
+      "Department",
+      "Attendance",
+      "Performance",
+      "Status",
+    ];
+
+    const rows = employees.map((emp) => [
+      emp.name,
+      emp.role,
+      emp.department,
+      emp.attendance,
+      emp.performance,
+      emp.status,
+    ]);
+
+    let csvContent =
+      "data:text/csv;charset=utf-8," +
+      [headers, ...rows]
+        .map((e) => e.join(","))
+        .join("\n");
+
+    const encodedUri = encodeURI(csvContent);
+
+    const link = document.createElement("a");
+
+    link.setAttribute("href", encodedUri);
+
+    link.setAttribute(
+      "download",
+      "employee_reports.csv"
+    );
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="reports-page">
 
       <div className="reports-header">
 
-        <div>
-          <h1>Reports & Analytics</h1>
+        <div className="header-left">
 
-          <p>
-            Employee performance, attendance and activity insights
-          </p>
+          <button
+            className="back-btn"
+            onClick={() => navigate("/dashboard")}
+          >
+            ← Back
+          </button>
+
+          <div>
+            <h1>Reports & Analytics</h1>
+
+            <p>
+              Employee performance, attendance and activity insights
+            </p>
+          </div>
+
         </div>
 
-        <button className="download-btn">
+        <button
+          className="download-btn"
+          onClick={handleDownloadReport}
+        >
           <FiDownload />
           Download Report
         </button>
@@ -151,7 +215,9 @@ const Reports = () => {
             <div className="progress-fill"></div>
           </div>
 
-          <p>Overall employee activity increased this month.</p>
+          <p>
+            Overall employee activity increased this month.
+          </p>
 
         </div>
 
@@ -168,7 +234,9 @@ const Reports = () => {
             <div className="progress-fill attendance-fill"></div>
           </div>
 
-          <p>Attendance performance is better than last month.</p>
+          <p>
+            Attendance performance is better than last month.
+          </p>
 
         </div>
 
@@ -192,6 +260,7 @@ const Reports = () => {
         </div>
 
       </div>
+
       <div className="report-table-container">
 
         <div className="table-header">
@@ -207,7 +276,6 @@ const Reports = () => {
             <span>Performance</span>
             <span>Status</span>
           </div>
-
 
           {employees.map((employee) => (
             <div className="table-row" key={employee.id}>
